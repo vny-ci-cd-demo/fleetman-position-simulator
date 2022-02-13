@@ -26,6 +26,11 @@ pipeline {
       }
 
       stage('Build and Push Image') {
+         steps{
+           withCredentials([string(credentialsId: 'docker hub', variable: 'dockerpwd')]) {
+           sh "docker login -u hvny -p ${dockerpwd}"
+            }
+        }
          steps {
            sh 'docker image build -t ${REPOSITORY_TAG} .'
            sh 'docker push ${REPOSITORY_TAG}'
