@@ -27,10 +27,7 @@ pipeline {
 
       stage('Build and Push Image') {
          steps{
-           withCredentials([string(credentialsId: 'docker hub', variable: 'string')]) {
-           sh "docker login -u hvny -p ${string}"
-           } 
-        
+           sh 'docker login -u "hvny" -p "7702305501@Dhub" docker.io'
            sh 'docker image build -t ${REPOSITORY_TAG} .'
            sh 'docker push ${REPOSITORY_TAG}'
          }          
