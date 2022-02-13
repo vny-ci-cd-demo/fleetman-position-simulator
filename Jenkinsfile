@@ -6,6 +6,8 @@ pipeline {
      // ORGANIZATION_NAME
      // YOUR_DOCKERHUB_USERNAME (it doesn't matter if you don't have one)
      
+     YOUR_DOCKERHUB_USERNAME = "hvny"
+     ORGANIZATION_NAME = "vny-ci-cd-demo"
      SERVICE_NAME = "fleetman-position-simulator"
      REPOSITORY_TAG="${YOUR_DOCKERHUB_USERNAME}/${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
    }
