@@ -9,7 +9,7 @@ pipeline {
      YOUR_DOCKERHUB_USERNAME = "hvny"
      ORGANIZATION_NAME = "vny-ci-cd-demo"
      SERVICE_NAME = "fleetman-position-simulator"
-     REPOSITORY_TAG="${YOUR_DOCKERHUB_USERNAME}/${ORGANIZATION_NAME}/${SERVICE_NAME}:${BUILD_ID}"
+     REPOSITORY_TAG="${YOUR_DOCKERHUB_USERNAME}/${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
    }
 
    stages {
