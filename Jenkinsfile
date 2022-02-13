@@ -31,7 +31,7 @@ pipeline {
            sh "docker login -u hvny -p ${dockerpwd}"
             }
         }
-         steps {
+         step {
            sh 'docker image build -t ${REPOSITORY_TAG} .'
            sh 'docker push ${REPOSITORY_TAG}'
          }
