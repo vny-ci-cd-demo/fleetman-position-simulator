@@ -29,12 +29,11 @@ pipeline {
          steps{
            withCredentials([string(credentialsId: 'docker hub', variable: 'dockerpwd')]) {
            sh "docker login -u hvny -p ${dockerpwd}"
-            }
-        }
-         step {
+           } 
+        
            sh 'docker image build -t ${REPOSITORY_TAG} .'
            sh 'docker push ${REPOSITORY_TAG}'
-         }
+         }          
       }
 
       stage('Deploy to Cluster') {
